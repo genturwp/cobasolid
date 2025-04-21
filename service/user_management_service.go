@@ -9,6 +9,7 @@ import (
 
 type UserManagementService interface {
 	UserRegistration(ctx context.Context, registrationReq *dto.RegistrationRequest) (*entity.UserProfile, error)
+	ChangePassword(ctx context.Context, oldPassword string, newPassword string) error
 }
 
 type userManagementSvc struct {
@@ -23,4 +24,8 @@ func NewUserManagementService(repository *repository.Repository) UserManagementS
 
 func (svc *userManagementSvc) UserRegistration(ctx context.Context, registrationReq *dto.RegistrationRequest) (*entity.UserProfile, error) {
 	return nil, nil
+}
+
+func (svc *userManagementSvc) ChangePassword(ctx context.Context, oldPassword string, newPassword string) error {
+	return nil
 }
